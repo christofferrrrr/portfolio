@@ -12,6 +12,7 @@ body {
   background-attachment: fixed;
   scroll-behavior: smooth;
   color: white; /* Set default text color to white */
+  width: 100%;
 }
 
 header, footer {
