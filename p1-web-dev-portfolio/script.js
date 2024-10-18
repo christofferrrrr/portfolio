@@ -2,33 +2,38 @@
 document.querySelectorAll('nav ul li a').forEach(link => {
   link.addEventListener('click', event => {
     event.preventDefault();
-    
+
     const sectionId = event.target.getAttribute('data-section');
-    
+
     // Fade out the current section
     document.querySelectorAll('section.visible').forEach(section => {
-      section.classList.remove('visible'); 
-      section.style.display = 'none'; 
+      section.classList.remove('visible');
+      section.style.display = 'none';
     });
-    
+
     // Fade in the new section
     const newSection = document.getElementById(sectionId);
-    newSection.style.display = 'block'; 
+    newSection.style.display = 'block';
     setTimeout(() => {
-      newSection.classList.add('visible'); 
-    }, 10); 
+      newSection.classList.add('visible');
+    }, 10);
+    
+    // Hide the menu when a link is clicked (optional for better UX)
+    const navMenu = document.querySelector('nav ul');
+    navMenu.classList.remove('show');
+    document.getElementById('burger-menu').classList.remove('active');
   });
 });
 
 // Handle logo click to go to landing section
 document.querySelector('.logo').addEventListener('click', event => {
   event.preventDefault();
-  
+
   document.querySelectorAll('section.visible').forEach(section => {
     section.classList.remove('visible');
     section.style.display = 'none';
   });
-  
+
   const landingSection = document.getElementById('landing');
   landingSection.style.display = 'block';
   setTimeout(() => {
@@ -46,7 +51,7 @@ initialSection.classList.add('visible');
 
 // Handle contact form submission
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
@@ -64,13 +69,14 @@ document.getElementById('contact-form').addEventListener('submit', function(even
 document.getElementById('burger-menu').addEventListener('click', function() {
   const navMenu = document.querySelector('nav ul');
   navMenu.classList.toggle('show');
+  this.classList.toggle('active'); // Toggle the active class
 });
 
 document.querySelectorAll('nav ul li a').forEach(link => {
   link.addEventListener('click', event => {
-      event.preventDefault();
-      const sectionId = event.target.getAttribute('data-section');
-      const section = document.getElementById(sectionId);
-      section.scrollIntoView({ behavior: 'smooth' });
+    event.preventDefault();
+    const sectionId = event.target.getAttribute('data-section');
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
   });
 });

@@ -182,6 +182,23 @@ form input, form textarea {
   color: white;
 }
 
+.contact-send {
+  margin-top: 1rem;
+  background-color: white;
+  height:3rem;
+  width: 10rem;
+  color:black;
+  font-family: 'General Sans', sans-serif;
+  font-weight: 700;
+  border-radius: 1rem;
+}
+
+.contact-send:hover {
+  background-color: #9b4dc2;
+  color: white;
+}
+
+
 form button {
   padding: 0.5rem;
   border: none;
@@ -372,4 +389,8 @@ section.visible {
     font-size: 2rem;
     color: white;
   }
+}
+
+.burger-menu.active {
+  color: #9b4dc2;
 }
