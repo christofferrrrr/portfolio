@@ -179,6 +179,7 @@ form input, form textarea {
 
 .download:hover {
   background-color: #9b4dc2;
+  color: white;
 }
 
 form button {
